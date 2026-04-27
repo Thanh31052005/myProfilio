@@ -5,6 +5,9 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <div>
+      <h1>Xin chào đây là lần đầu</h1>
+    </div>
+    <App></App>
   </StrictMode>,
 )
