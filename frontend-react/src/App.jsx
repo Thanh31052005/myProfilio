@@ -2,122 +2,97 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
+import javaimg from './assets/java.png'
+import pythonimg from './assets/python.png'
+import csharpimg from './assets/csharp.png'
+import cppimg from './assets/cpp.png'
+import typescriptimg from './assets/TS.png'
+import javascriptimg from './assets/JS.png'
 import './App.css'
 
+function showFromLanguage(language) {
+  switch (language) {
+    case 'JavaScript':
+      return
+      <div>
+        <img src={javascriptimg} alt="JavaScript logo" className="language-logo" />
+        <h1>JavaScript</h1>
+      </div>;
+    case 'TypeScript':
+      return <img src={typescriptimg} alt="TypeScript logo" className="language-logo" />;
+    case 'Python':
+      return <img src={pythonimg} alt="Python logo" className="language-logo" />;
+    case 'Java':
+      return <img src={javaimg} alt="Java logo" className="language-logo" />;
+    case 'C#':
+      return <img src={csharpimg} alt="C# logo" className="language-logo" />;
+    case 'C++':
+      return <img src={cppimg} alt="C++ logo" className="language-logo" />;
+    default:
+      return null;
+  }
+}
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [language, setLanguage] = useState('');
+  const clickEvent = () => {
+    console.log(language);
+    <showFromLanguage language={language} />  
+  }
+
 
   return (
     <>
       <section id="center">
-        <div>
-          <input type="email" placeholder="Nhap email cua ban"></input>
-        </div>
+        <h1>Welcome to My Profilio</h1>
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
         </div>
+        
+
         <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <input 
+            type="text" 
+            placeholder="Chọn loại ngôn ngữ của bạn" 
+            size="40" 
+            list="language-list"
+            value={language}
+            onChange={(e) => setLanguage(e.target.value)}
+          />
+          <datalist id="language-list">
+            <option value="JavaScript">JavaScript</option>
+            <option value="TypeScript">TypeScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="C++">C++</option>  
+          </datalist>
+          <button type="button" className="counter" onClick={clickEvent} 
+            switch (language) {
+    case 'JavaScript':
+      return
+      <div>
+        <img src={javascriptimg} alt="JavaScript logo" className="language-logo" />
+        <h1>JavaScript</h1>
+      </div>;
+    case 'TypeScript':
+      return <img src={typescriptimg} alt="TypeScript logo" className="language-logo" />;
+    case 'Python':
+      return <img src={pythonimg} alt="Python logo" className="language-logo" />;
+    case 'Java':
+      return <img src={javaimg} alt="Java logo" className="language-logo" />;
+    case 'C#':
+      return <img src={csharpimg} alt="C# logo" className="language-logo" />;
+    case 'C++':
+      return <img src={cppimg} alt="C++ logo" className="language-logo" />;
+    default:
+      return null;
+          >
+            Submit</button>
         </div>
       </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
     </>
   )
 }
