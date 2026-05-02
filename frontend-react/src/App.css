@@ -1,3 +1,8 @@
+@import "tailwindcss";
+@plugin "daisyui/index.js";
+@import "daisyui/themes.css";
+
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
@@ -39,6 +44,12 @@
     position: absolute;
   }
 
+  .language-logo {
+    height: 28px;
+    width: auto;
+
+  }
+
   .framework {
     z-index: 1;
     top: 34px;
@@ -54,6 +65,8 @@
     transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
   }
 }
+
+
 
 #center {
   display: flex;
