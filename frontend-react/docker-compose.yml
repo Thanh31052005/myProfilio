@@ -1,5 +1,6 @@
 services:
   react-app:
+    container_name: react-app
     image: node:24-slim
     working_dir: /app
     volumes:
