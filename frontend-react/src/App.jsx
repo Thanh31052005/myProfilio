@@ -101,63 +101,29 @@ function App() {
     <>
       <div className="min-h-screen bg-base-100 text-base-content relative">
         <AnimatedGridPattern
-          numSquares={60} /* Tăng số lượng ô vuông lên vì màn hình rất rộng */
           maxOpacity={0.1}
           duration={3}
           repeatDelay={1}
           className={cn(
-            // Tăng vùng sáng từ 500px lên 1500px (hoặc xóa luôn dòng mask này nếu muốn lưới hiện rõ mọi nơi)
             "[mask-image:radial-gradient(1500px_circle_at_center,white,transparent)]",
-
-            // fixed: Cố định khi cuộn chuột | inset-0: Trải đều 4 góc | z-0: Ép nằm dưới cùng
-            "fixed inset-0 h-screen w-full skew-y-12 z-0"
+            "fixed inset-x-0 inset-y-[-30%] h-[200%] w-full skew-y-12 z-0"
           )}
         />
         <section id="center">
-
+          <DockDemo />
           <div>
             <Text3DFlip
-              className="font-serif text-2xl sm:text-5xl md:text-[56px]"
+              className="font-serif text-6xl sm:text-7xl md:text-5xl font-black text-center cursor-pointer pb-4"
               textClassName="text-base-content"
               flipTextClassName="text-base-content"
               rotateDirection="top"
               staggerDuration={0.03}
               staggerFrom="center"
             >
-              <h1 className="pointer-events-none bg-linear-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl leading-none font-semibold whitespace-pre-wrap text-transparent dark:from-white dark:to-slate-900/10">
-                Welcome to My Portfolio
-              </h1>
+              WELCOME TO MY PORTFOLIO
             </Text3DFlip>
             <AnimatedThemeToggler className="absolute right-6 top-5 btn btn-ghost btn-circle" />
           </div>
-          <div className="flex flex-row flex-wrap gap-8 justify-center items-stretch w-full max-w-4xl">
-
-            <div onMouseMove={handleTilt} onMouseLeave={handleTiltReset}><div className="hover-3d">
-              <figure className="rounded-2xl overflow-hidden">
-                <img src={calculatorimg} alt="Calculator project" className="w-full h-full object-cover" />
-              </figure>
-              <p className="hover-3d-title">Calculator App</p>
-              <div className="hover-3d-overlay"></div>
-            </div></div>
-
-            <div onMouseMove={handleTilt} onMouseLeave={handleTiltReset}><div className="hover-3d">
-              <figure className="rounded-2xl overflow-hidden">
-                <img src={calculatorimg} alt="Calculator project" className="w-full h-full object-cover" />
-              </figure>
-              <p className="hover-3d-title">Portfolio Site</p>
-              <div className="hover-3d-overlay"></div>
-            </div></div>
-
-            <div onMouseMove={handleTilt} onMouseLeave={handleTiltReset}><div className="hover-3d">
-              <figure className="rounded-2xl overflow-hidden">
-                <img src={calculatorimg} alt="Calculator project" className="w-full h-full object-cover" />
-              </figure>
-              <p className="hover-3d-title">Coming Soon</p>
-              <div className="hover-3d-overlay"></div>
-            </div></div>
-
-          </div>
-
           <div>
             <input
               type="text"
@@ -185,7 +151,6 @@ function App() {
         <div id="center">{showFromLanguage(languageSubmitted)}</div>
 
         <section id="spacer"></section>
-        <DockDemo />
 
         <section id="spacer"></section>
         <Social_Menu />
